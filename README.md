@@ -54,3 +54,11 @@ Change it there and the whole site updates.
 - GitHub stats on the page (47 repos, star counts, language mix) are a snapshot from October 2026; update them in `profile.ts` when they drift.
 - The WestwayRide and JFA images are screenshots of the live sites. Retake them if those sites change.
 - The illustrated project visuals (LocalLens, NaanStaap, EcoRentUK, Restaurant POS, Wheel Magic) are sketches of each product's idea, not captures of the real UI.
+
+## Deploying
+
+The site is hosted on Vercel and connected to this GitHub repository:
+
+- Pushes to `main` deploy to production automatically: https://basit-portfolio-eight.vercel.app
+- Other branches get preview deployments, which Vercel protects with a login by default.
+- Run `npm run build` locally first if you want to catch errors before pushing.
