@@ -22,7 +22,7 @@ const display = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.role}`,
   description:
-    "Portfolio of Basit Ur Rehman Malik, a London-based full-stack and React Native engineer. Next.js, TypeScript, Node, and open-source contributions.",
+    "Interactive portfolio of Basit Ur Rehman Malik, a London-based full-stack and React Native engineer. Walk the Thames through nine chapters of projects, experience and open-source work.",
   authors: [{ name: profile.name, url: profile.github }],
   keywords: [
     "Basit Ur Rehman Malik",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${profile.name} | ${profile.role}`,
     description:
-      "Full-stack and React Native engineer in London. Selected work, open-source contributions and experience.",
+      "Walk a 3D London from London Bridge to Tower Bridge and explore the work of a full-stack and React Native engineer in London.",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

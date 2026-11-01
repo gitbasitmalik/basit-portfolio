@@ -2,6 +2,7 @@
   "name": "basit-portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Interactive 3D London portfolio of Basit Ur Rehman Malik, a full-stack and React Native engineer in London.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

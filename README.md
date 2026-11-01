@@ -1,64 +1,44 @@
-# Basit Ur Rehman Malik, portfolio
+# Basit Ur Rehman Malik — Portfolio ("Basit's London")
 
-A single-page portfolio built with **Next.js 16 (App Router)**, **GSAP** (+ ScrollTrigger, SplitText, ScrambleText), **Framer Motion**, **Lenis** smooth scrolling and **Tailwind CSS 4**.
+An interactive portfolio. Visitors walk a low-poly **3D London** along the
+Thames, from London Bridge to Tower Bridge, and discover nine chapters of the
+story — experience, projects, open source, skills and contact — plus repo
+pickups, small mini-games, day/night, rain and a photo-postcard spot.
+
+Built as one self-contained HTML page (Three.js) and served at the site root by
+a thin **Next.js 16 (App Router)** app.
 
 ## Run it
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npm run dev        # http://localhost:3000
 npm run build && npm start
 ```
 
+## How it's wired
+
+- The whole experience lives in **`public/london/index.html`** — a single
+  self-contained file (Three.js via CDN; all art and audio generated in code,
+  no external image/audio assets).
+- The homepage shows it two ways, so `/` always shows the experience and never
+  an old page:
+  1. `next.config.ts` **rewrites `/` → `/london/index.html`** (served directly — best for SEO).
+  2. `src/app/page.tsx` is a full-screen fallback that embeds the same file.
+- `src/app/layout.tsx` holds the site `<title>` and metadata.
+- `src/data/profile.ts` holds the name/role used in that metadata.
+- `public/Basit_Ur_Rehman_Malik_CV.pdf` is the CV the experience links to.
+
 ## Edit the content
 
-Everything on the page comes from one file: [`src/data/profile.ts`](src/data/profile.ts)
-(profile, stats, experience, featured projects, builds, open-source PRs, skills, education).
-Change it there and the whole site updates.
+Open **`public/london/index.html`** and edit the data arrays near the top of the
+script: `PROJECTS`, the `CH` chapters, `SKILLS`, `TAIL` (more builds) and the
+contact links. It's all in that one file.
 
-| Want to… | Do this |
-| --- | --- |
-| Add the **Download CV** button | Put your PDF at `public/Basit_Ur_Rehman_Malik_CV.pdf`. The button appears automatically. |
-| Add a project screenshot | Drop a `~1280×800` JPG in `public/projects/`, then use `visual: { type: "image", src, alt }` in `featured`. |
-| Add a project with no screenshot | Use `visual: { type: "art", art: "..." }`. The illustrations live in `src/components/art/ProjectArt.tsx`. |
-| Link a repo or live site | Add it to the project's `links`. Projects with no links show "Private · no public link". |
-| Change the colours | `:root` variables at the top of `src/app/globals.css`. |
+## Deploy
 
-## What's where
+Hosted on **Vercel**, connected to this GitHub repository:
 
-| Interaction | File |
-| --- | --- |
-| Preloader (counter, name reveal, curtain) | `src/components/Preloader.tsx` |
-| Smooth scroll wired to ScrollTrigger | `src/components/SmoothScroll.tsx` |
-| Custom cursor with labels (`data-cursor="..."`) | `src/components/ui/Cursor.tsx` |
-| Magnetic buttons | `src/components/ui/Magnetic.tsx` |
-| Hero: SplitText intro, role rotator, parallax, marquee | `src/components/Hero.tsx` |
-| Scroll-scrubbed text and count-up stats | `src/components/About.tsx` |
-| Timeline that draws as you scroll | `src/components/Experience.tsx` |
-| Pinned horizontal project scroller + 3D-tilt cards | `src/components/Work.tsx`, `ProjectCard.tsx` |
-| Animated filter grid (layout animations) | `src/components/MoreBuilds.tsx` |
-| Diff bars for merged pull requests | `src/components/OpenSource.tsx` |
-| Language donut, skill chips | `src/components/Skills.tsx` |
-| Dissertation pipeline diagram | `src/components/Education.tsx` |
-| Email scramble, copy button, London clock | `src/components/Contact.tsx` |
-
-## Accessibility and performance
-
-- Respects `prefers-reduced-motion`: no preloader, no smooth scrolling, no pinned scroller, content visible immediately.
-- Custom cursor only appears on devices with a fine pointer.
-- Skip link, focus outlines, labelled external links, mobile menu with scroll lock.
-- Fully static output: deploy anywhere (`npx vercel`).
-
-## Notes
-
-- GitHub stats on the page (47 repos, star counts, language mix) are a snapshot from October 2026; update them in `profile.ts` when they drift.
-- The WestwayRide and JFA images are screenshots of the live sites. Retake them if those sites change.
-- The illustrated project visuals (LocalLens, NaanStaap, EcoRentUK, Restaurant POS, Wheel Magic) are sketches of each product's idea, not captures of the real UI.
-
-## Deploying
-
-The site is hosted on Vercel and connected to this GitHub repository:
-
-- Pushes to `main` deploy to production automatically: https://basit-portfolio-eight.vercel.app
-- Other branches get preview deployments, which Vercel protects with a login by default.
-- Run `npm run build` locally first if you want to catch errors before pushing.
+- **Push to `main` → production deploys automatically.**
+- Other branches get preview deployments (login-protected by default).
+- Run `npm run build` locally first to catch errors before pushing.
