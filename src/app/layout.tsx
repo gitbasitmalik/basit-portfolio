@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { profile } from "@/data/profile";
 
@@ -52,7 +53,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${display.variable} antialiased`}
     >
-      <body className="grain min-h-screen">{children}</body>
+      <body className="grain min-h-screen">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
