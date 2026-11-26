@@ -17,7 +17,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/basitmalik001",
   status: "Open to full-time UK engineering roles",
   summary:
-    "I'm a full-stack and React Native engineer based in London. I build products end to end, from Next.js interfaces to Node, Python and Postgres back ends. I'm finishing an MSc in Software Engineering at the University of Hertfordshire, researching how LLMs can help catch performance anti-patterns in React apps, and I contribute fixes to open-source projects.",
+    "I'm a full-stack and React Native engineer based in London. I build products end to end, from Next.js interfaces to Node, Python and Postgres back ends. I hold an MSc in Software Engineering from the University of Hertfordshire, where my dissertation researched how LLMs can help catch performance anti-patterns in React apps, and I contribute fixes to open-source projects.",
   roles: [
     "Full-Stack Engineer",
     "React Native Developer",
@@ -555,7 +555,7 @@ export const education = [
   {
     degree: "MSc Software Engineering",
     school: "University of Hertfordshire, Hatfield",
-    period: "2025 – Nov 2026",
+    period: "2025 – 2026",
   },
   {
     degree: "BSc Software Engineering",

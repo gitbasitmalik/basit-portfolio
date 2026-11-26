@@ -21,6 +21,7 @@ const display = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.basitmalik.me"),
   title: `${profile.name} | ${profile.role}`,
   description:
     "Interactive portfolio of Basit Ur Rehman Malik, a London-based full-stack and React Native engineer. Walk the Thames through nine chapters of projects, experience and open-source work.",
@@ -38,8 +39,16 @@ export const metadata: Metadata = {
     description:
       "Walk a 3D London from London Bridge to Tower Bridge and explore the work of a full-stack and React Native engineer in London.",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Basit Ur Rehman Malik, Software Engineer: Tower Bridge at sunset over the Thames",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 export const viewport: Viewport = {
