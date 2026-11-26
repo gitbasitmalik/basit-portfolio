@@ -38,7 +38,7 @@ export default function Home() {
         <p>
           Basit Ur Rehman Malik builds web and mobile products end to end with
           Next.js, React, React Native, Node, Python and PostgreSQL, and is open
-          to full-time engineering roles in the UK. 47+ public GitHub
+          to full-time engineering roles in the UK. 40+ original GitHub
           repositories, three merged open-source pull requests, four engineering
           internships, and an MSc in Software Engineering (University of
           Hertfordshire, 2026). Selected work includes LocalLens, NaanStaap,

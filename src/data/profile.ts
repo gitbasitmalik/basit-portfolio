@@ -28,7 +28,7 @@ export const profile = {
 } as const;
 
 export const stats = [
-  { value: 47, suffix: "+", label: "Public GitHub repos" },
+  { value: 40, suffix: "+", label: "Original GitHub repos" },
   { value: 3, suffix: "", label: "Merged open-source PRs" },
   { value: 4, suffix: "", label: "Engineering internships" },
   { value: 2, suffix: "", label: "Live client sites" },
