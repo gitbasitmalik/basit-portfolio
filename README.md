@@ -19,8 +19,12 @@ npm run build && npm start
 ## How it's wired
 
 - The whole experience lives in **`public/london/index.html`** — a single
-  self-contained file (Three.js via CDN; all art and audio generated in code,
-  no external image/audio assets).
+  self-contained file (all art and audio generated in code, no external
+  image/audio assets).
+- Three.js 0.170.0 is self-hosted in `public/london/vendor/three@0.170.0/`
+  (no CDN, so it loads on networks that block jsDelivr). A small loader in the
+  page downloads it with a progress bar, then starts the 3D app. To upgrade,
+  add a new versioned folder and update the paths and byte sizes in the loader.
 - The homepage shows it two ways, so `/` always shows the experience and never
   an old page:
   1. `next.config.ts` **rewrites `/` → `/london/index.html`** (served directly — best for SEO).

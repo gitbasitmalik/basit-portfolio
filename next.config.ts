@@ -12,6 +12,21 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async headers() {
+    return [
+      {
+        // Self-hosted Three.js. The folder name carries the version, so the
+        // files never change in place and can be cached for a year.
+        source: "/london/vendor/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return {
       beforeFiles: [
